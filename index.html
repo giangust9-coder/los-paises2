@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>world emperor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="lobby" class="lobby">
+        <div class="lobby-panel">
+            <h1>World Emperor</h1>
+            <label for="playerName">Nombre</label>
+            <input id="playerName" maxlength="18" placeholder="Jugador">
+            <label for="roomCode">Codigo de partida</label>
+            <input id="roomCode" maxlength="8" placeholder="Ej: A7K2P">
+            <div class="lobby-actions">
+                <button id="createRoomBtn">Crear partida</button>
+                <button id="joinRoomBtn">Entrar</button>
+            </div>
+            <p id="lobbyMessage"></p>
+        </div>
+    </section>
+
+    <main id="game" hidden>
+        <header id="stats-panel">
+            <span class="stat-box">Sala: <strong id="sala">---</strong></span>
+            <span class="stat-box">Faccion: <strong id="faccion">---</strong></span>
+            <span class="stat-box">Turno: <strong id="turno-stat">1</strong></span>
+            <span class="stat-box">Oro: <strong id="oro">0</strong></span>
+            <span class="stat-box">Ciencia: <strong id="ciencia">0</strong></span>
+            <span class="stat-box">Unidades: <strong id="unidades">0</strong></span>
+        </header>
+
+        <section id="game-container">
+            <canvas id="gameCanvas"></canvas>
+            <div id="controls-help">
+                Arrastrar: seleccionar<br>
+                Click derecho: mover<br>
+                T: reclutar | B: base<br>
+                Espacio: turno | N: bomba
+            </div>
+            <div id="tooltip"></div>
+        </section>
+
+        <section id="ui-bottom">
+            <aside id="log-console"></aside>
+            <section id="tech-panel">
+                <h2 class="section-title">Tecnologias</h2>
+                <div id="tech-tree"></div>
+            </section>
+            <aside id="relaciones-panel">
+                <h2 class="section-title">Relaciones</h2>
+                <div id="relaciones-container"></div>
+                <h2 class="section-title">Jugadores</h2>
+                <div id="players-container"></div>
+            </aside>
+        </section>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,639 @@
+{
+  "tecnologias": [
+    {
+      "id": "agricultura",
+      "nombre": "Agricultura",
+      "costo": 15,
+      "req": null,
+      "descripcion": "Inicio de la civilización."
+    },
+    {
+      "id": "irrigacion",
+      "nombre": "Irrigación",
+      "costo": 30,
+      "req": "agricultura",
+      "descripcion": "+ Ciencia al recolectar."
+    },
+    {
+      "id": "siderurgia",
+      "nombre": "Siderurgia",
+      "costo": 25,
+      "req": "agricultura",
+      "descripcion": "+40% de daño."
+    },
+    {
+      "id": "infanteria_ligera",
+      "nombre": "Infantería Ligera",
+      "costo": 20,
+      "req": "siderurgia"
+    },
+    {
+      "id": "escudos_bronce",
+      "nombre": "Escudos de Bronce",
+      "costo": 30,
+      "req": "infanteria_ligera"
+    },
+    {
+      "id": "formacion_falange",
+      "nombre": "Falange",
+      "costo": 40,
+      "req": "escudos_bronce"
+    },
+    {
+      "id": "espadas_acero",
+      "nombre": "Espadas de Acero",
+      "costo": 55,
+      "req": "formacion_falange"
+    },
+    {
+      "id": "ballestas",
+      "nombre": "Ballestas",
+      "costo": 70,
+      "req": "espadas_acero"
+    },
+    {
+      "id": "polvora",
+      "nombre": "Pólvora",
+      "costo": 100,
+      "req": "ballestas"
+    },
+    {
+      "id": "mosquetes",
+      "nombre": "Mosquetes",
+      "costo": 125,
+      "req": "polvora"
+    },
+    {
+      "id": "bayonetas",
+      "nombre": "Bayonetas",
+      "costo": 150,
+      "req": "mosquetes"
+    },
+    {
+      "id": "rifles_repeticion",
+      "nombre": "Rifles de Repetición",
+      "costo": 200,
+      "req": "bayonetas"
+    },
+    {
+      "id": "blindaje_personal",
+      "nombre": "Blindaje Moderno",
+      "costo": 300,
+      "req": "rifles_repeticion"
+    },
+    {
+      "id": "domesticacion",
+      "nombre": "Domesticación",
+      "costo": 25,
+      "req": "agricultura"
+    },
+    {
+      "id": "estribos",
+      "nombre": "Estribos",
+      "costo": 40,
+      "req": "domesticacion"
+    },
+    {
+      "id": "caballeria_pesada",
+      "nombre": "Caballería Pesada",
+      "costo": 60,
+      "req": "estribos"
+    },
+    {
+      "id": "rueda_dentada",
+      "nombre": "Rueda Dentada",
+      "costo": 80,
+      "req": "caballeria_pesada"
+    },
+    {
+      "id": "motor_vapor",
+      "nombre": "Motor de Vapor",
+      "costo": 125,
+      "req": "rueda_dentada"
+    },
+    {
+      "id": "chasis_hierro",
+      "nombre": "Chasis de Hierro",
+      "costo": 175,
+      "req": "motor_vapor"
+    },
+    {
+      "id": "combustion_interna",
+      "nombre": "Combustión Interna",
+      "costo": 250,
+      "req": "chasis_hierro"
+    },
+    {
+      "id": "blindaje_tanque",
+      "nombre": "Blindaje de Tanque",
+      "costo": 350,
+      "req": "combustion_interna"
+    },
+    {
+      "id": "traccion_oruga",
+      "nombre": "Tracción por Oruga",
+      "costo": 450,
+      "req": "blindaje_tanque"
+    },
+    {
+      "id": "blindaje_reactivo",
+      "nombre": "Blindaje Reactivo",
+      "costo": 600,
+      "req": "traccion_oruga"
+    },
+    {
+      "id": "navegacion_costera",
+      "nombre": "Navegación Costera",
+      "costo": 30,
+      "req": "agricultura"
+    },
+    {
+      "id": "velas_latinas",
+      "nombre": "Velas Latinas",
+      "costo": 50,
+      "req": "navegacion_costera"
+    },
+    {
+      "id": "astilleros",
+      "nombre": "Astilleros",
+      "costo": 75,
+      "req": "velas_latinas"
+    },
+    {
+      "id": "carabelas",
+      "nombre": "Carabelas",
+      "costo": 110,
+      "req": "astilleros"
+    },
+    {
+      "id": "cañones_navales",
+      "nombre": "Cañones Navales",
+      "costo": 150,
+      "req": "carabelas"
+    },
+    {
+      "id": "fragatas",
+      "nombre": "Fragatas",
+      "costo": 225,
+      "req": "cañones_navales"
+    },
+    {
+      "id": "acorazados",
+      "nombre": "Acorazados",
+      "costo": 325,
+      "req": "fragatas"
+    },
+    {
+      "id": "motores_diesel_marinos",
+      "nombre": "Motores Diésel Marinos",
+      "costo": 425,
+      "req": "acorazados"
+    },
+    {
+      "id": "sonar",
+      "nombre": "Sonar",
+      "costo": 550,
+      "req": "motores_diesel_marinos"
+    },
+    {
+      "id": "propulsion_nuclear",
+      "nombre": "Propulsión Nuclear",
+      "costo": 1000,
+      "req": "sonar"
+    },
+    {
+      "id": "trueque",
+      "nombre": "Trueque",
+      "costo": 15,
+      "req": null
+    },
+    {
+      "id": "moneda",
+      "nombre": "Acuñación de Moneda",
+      "costo": 35,
+      "req": "trueque"
+    },
+    {
+      "id": "mercados",
+      "nombre": "Mercados Regionales",
+      "costo": 60,
+      "req": "moneda"
+    },
+    {
+      "id": "rutas_comerciales",
+      "nombre": "Rutas Comerciales",
+      "costo": 90,
+      "req": "mercados"
+    },
+    {
+      "id": "banca",
+      "nombre": "Banca Primitiva",
+      "costo": 140,
+      "req": "rutas_comerciales"
+    },
+    {
+      "id": "sociedades_anonimas",
+      "nombre": "Sociedades Anónimas",
+      "costo": 200,
+      "req": "banca"
+    },
+    {
+      "id": "bolsa_valores",
+      "nombre": "Bolsa de Valores",
+      "costo": 300,
+      "req": "sociedades_anonimas"
+    },
+    {
+      "id": "patron_oro",
+      "nombre": "Patrón Oro",
+      "costo": 450,
+      "req": "bolsa_valores"
+    },
+    {
+      "id": "banca_digital",
+      "nombre": "Banca Digital",
+      "costo": 650,
+      "req": "patron_oro"
+    },
+    {
+      "id": "criptoeconomia",
+      "nombre": "Criptoeconomía",
+      "costo": 1250,
+      "req": "banca_digital"
+    },
+    {
+      "id": "escritura",
+      "nombre": "Escritura Jeroglífica",
+      "costo": 20,
+      "req": null
+    },
+    {
+      "id": "alfabeto",
+      "nombre": "Alfabeto Fonético",
+      "costo": 40,
+      "req": "escritura"
+    },
+    {
+      "id": "bibliotecas",
+      "nombre": "Bibliotecas",
+      "costo": 65,
+      "req": "alfabeto"
+    },
+    {
+      "id": "universidades",
+      "nombre": "Universidades Medievales",
+      "costo": 125,
+      "req": "bibliotecas"
+    },
+    {
+      "id": "imprenta",
+      "nombre": "Imprenta",
+      "costo": 200,
+      "req": "universidades"
+    },
+    {
+      "id": "metodo_cientifico",
+      "nombre": "Método Científico",
+      "costo": 300,
+      "req": "imprenta"
+    },
+    {
+      "id": "laboratorios",
+      "nombre": "Laboratorios Químicos",
+      "costo": 450,
+      "req": "metodo_cientifico"
+    },
+    {
+      "id": "computacion_analogica",
+      "nombre": "Computación Analógica",
+      "costo": 700,
+      "req": "laboratorios"
+    },
+    {
+      "id": "microchips",
+      "nombre": "Microchips",
+      "costo": 1000,
+      "req": "computacion_analogica"
+    },
+    {
+      "id": "ia_cuantica",
+      "nombre": "IA Cuántica",
+      "costo": 2000,
+      "req": "microchips"
+    },
+    {
+      "id": "albañileria",
+      "nombre": "Albañilería",
+      "costo": 20,
+      "req": null
+    },
+    {
+      "id": "acueductos",
+      "nombre": "Acueductos",
+      "costo": 45,
+      "req": "albañileria"
+    },
+    {
+      "id": "calzadas",
+      "nombre": "Calzadas de Piedra",
+      "costo": 75,
+      "req": "acueductos"
+    },
+    {
+      "id": "puentes_arco",
+      "nombre": "Puentes de Arco",
+      "costo": 110,
+      "req": "calzadas"
+    },
+    {
+      "id": "arquitectura_gotica",
+      "nombre": "Arquitectura Gótica",
+      "costo": 175,
+      "req": "puentes_arco"
+    },
+    {
+      "id": "estructuras_acero",
+      "nombre": "Estructuras de Acero",
+      "costo": 275,
+      "req": "arquitectura_gotica"
+    },
+    {
+      "id": "hormigon_armado",
+      "nombre": "Hormigón Armado",
+      "costo": 400,
+      "req": "estructuras_acero"
+    },
+    {
+      "id": "rascacielos",
+      "nombre": "Rascacielos",
+      "costo": 600,
+      "req": "hormigon_armado"
+    },
+    {
+      "id": "ciudades_inteligentes",
+      "nombre": "Ciudades Inteligentes",
+      "costo": 900,
+      "req": "rascacielos"
+    },
+    {
+      "id": "arcologias",
+      "nombre": "Arcologías",
+      "costo": 1750,
+      "req": "ciudades_inteligentes"
+    },
+    {
+      "id": "mensajeria_caballo",
+      "nombre": "Mensajería a Caballo",
+      "costo": 25,
+      "req": "domesticacion"
+    },
+    {
+      "id": "correo_postal",
+      "nombre": "Servicio Postal",
+      "costo": 50,
+      "req": "mensajeria_caballo"
+    },
+    {
+      "id": "telegrafo",
+      "nombre": "Telégrafo",
+      "costo": 100,
+      "req": "correo_postal"
+    },
+    {
+      "id": "telefono",
+      "nombre": "Teléfono",
+      "costo": 175,
+      "req": "telegrafo"
+    },
+    {
+      "id": "radio",
+      "nombre": "Radiofusión",
+      "costo": 250,
+      "req": "telefono"
+    },
+    {
+      "id": "television",
+      "nombre": "Televisión",
+      "costo": 375,
+      "req": "radio"
+    },
+    {
+      "id": "satelites",
+      "nombre": "Satélites",
+      "costo": 550,
+      "req": "television"
+    },
+    {
+      "id": "internet",
+      "nombre": "Internet de Fibra",
+      "costo": 800,
+      "req": "satelites"
+    },
+    {
+      "id": "redes_5g",
+      "nombre": "Redes 5G/6G",
+      "costo": 1150,
+      "req": "internet"
+    },
+    {
+      "id": "telepatia_digital",
+      "nombre": "Enlace Neural",
+      "costo": 2500,
+      "req": "redes_5g"
+    },
+    {
+      "id": "aerostatica",
+      "nombre": "Globos Aerostáticos",
+      "costo": 75,
+      "req": "motor_vapor"
+    },
+    {
+      "id": "planeadores",
+      "nombre": "Planeadores",
+      "costo": 125,
+      "req": "aerostatica"
+    },
+    {
+      "id": "biplanos",
+      "nombre": "Biplanos",
+      "costo": 200,
+      "req": "planeadores"
+    },
+    {
+      "id": "monoplanos_metal",
+      "nombre": "Monoplanos de Metal",
+      "costo": 300,
+      "req": "biplanos"
+    },
+    {
+      "id": "motores_reaccion",
+      "nombre": "Motores de Reacción",
+      "costo": 450,
+      "req": "monoplanos_metal"
+    },
+    {
+      "id": "aviacion_supersonica",
+      "nombre": "Aviación Supersónica",
+      "costo": 650,
+      "req": "motores_reaccion"
+    },
+    {
+      "id": "sigilo_radar",
+      "nombre": "Tecnología Sigilo",
+      "costo": 900,
+      "req": "aviacion_supersonica"
+    },
+    {
+      "id": "drones_autonomos",
+      "nombre": "Drones Autónomos",
+      "costo": 1250,
+      "req": "sigilo_radar"
+    },
+    {
+      "id": "motores_plasma",
+      "nombre": "Motores de Plasma",
+      "costo": 2000,
+      "req": "drones_autonomos"
+    },
+    {
+      "id": "anti_gravedad",
+      "nombre": "Anti-gravedad",
+      "costo": 4000,
+      "req": "motores_plasma"
+    },
+    {
+      "id": "coheteria_basica",
+      "nombre": "Cohetería Básica",
+      "costo": 150,
+      "req": "polvora"
+    },
+    {
+      "id": "cohetes_multietapa",
+      "nombre": "Cohetes Multietapa",
+      "costo": 300,
+      "req": "coheteria_basica"
+    },
+    {
+      "id": "orbita_terrestre",
+      "nombre": "Órbita Terrestre",
+      "costo": 500,
+      "req": "cohetes_multietapa"
+    },
+    {
+      "id": "alunizaje",
+      "nombre": "Alunizaje",
+      "costo": 750,
+      "req": "orbita_terrestre"
+    },
+    {
+      "id": "estaciones_espaciales",
+      "nombre": "Estaciones Espaciales",
+      "costo": 1100,
+      "req": "alunizaje"
+    },
+    {
+      "id": "mineria_asteroides",
+      "nombre": "Minería de Asteroides",
+      "costo": 1600,
+      "req": "estaciones_espaciales"
+    },
+    {
+      "id": "colonizacion_marte",
+      "nombre": "Colonización de Marte",
+      "costo": 2500,
+      "req": "mineria_asteroides"
+    },
+    {
+      "id": "esfera_dyson",
+      "nombre": "Enjambre de Dyson (Alfa)",
+      "costo": 5000,
+      "req": "colonizacion_marte"
+    },
+    {
+      "id": "viaje_interestelar",
+      "nombre": "Motores de Curvatura",
+      "costo": 10000,
+      "req": "esfera_dyson"
+    },
+    {
+      "id": "ascension_estelar",
+      "nombre": "Ascensión Estelar",
+      "costo": 25000,
+      "req": "viaje_interestelar"
+    },
+    {
+      "id": "herboristeria",
+      "nombre": "Herboristería",
+      "costo": 20,
+      "req": "agricultura"
+    },
+    {
+      "id": "anatomia",
+      "nombre": "Anatomía Humana",
+      "costo": 50,
+      "req": "herboristeria"
+    },
+    {
+      "id": "vacunas",
+      "nombre": "Vacunas Primitivas",
+      "costo": 125,
+      "req": "anatomia"
+    },
+    {
+      "id": "antibioticos",
+      "nombre": "Antibióticos",
+      "costo": 225,
+      "req": "vacunas"
+    },
+    {
+      "id": "rayos_x",
+      "nombre": "Rayos X",
+      "costo": 350,
+      "req": "antibioticos"
+    },
+    {
+      "id": "genetica",
+      "nombre": "Genética Mendelar",
+      "costo": 550,
+      "req": "rayos_x"
+    },
+    {
+      "id": "secuenciacion_adn",
+      "nombre": "Secuenciación de ADN",
+      "costo": 850,
+      "req": "genetica"
+    },
+    {
+      "id": "nanomedicina",
+      "nombre": "Nanomedicina",
+      "costo": 1300,
+      "req": "secuenciacion_adn"
+    },
+    {
+      "id": "clonacion_organos",
+      "nombre": "Clonación de Órganos",
+      "costo": 2000,
+      "req": "nanomedicina"
+    },
+    {
+      "id": "inmortalidad_digital",
+      "nombre": "Inmortalidad Digital",
+      "costo": 5000,
+      "req": "clonacion_organos"
+    },
+    {
+      "id": "fisica_nuclear",
+      "nombre": "Física Nuclear",
+      "costo": 400,
+      "req": "metodo_cientifico",
+      "descripcion": "Domina la fisión atómica."
+    },
+    {
+      "id": "bomba_nuclear",
+      "nombre": "☢️ Bomba Nuclear",
+      "costo": 800,
+      "req": "fisica_nuclear",
+      "descripcion": "Arma de destrucción masiva. Radio de 3 casillas. Solo una disponible. [N] para detonar."
+    }
+  ]
+}

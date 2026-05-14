@@ -1,0 +1,335 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #264d2a;
+    color: #ffffff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Panel de estadísticas */
+#stats-panel {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 8px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    border-bottom: 2px solid #1a331c;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.stat-box { display: inline-block; }
+#turno-stat { color: #aaaaaa; }
+#oro        { color: #ffd700; }
+#ciencia    { color: #00e5ff; }
+#unidades   { color: #ff9800; }
+
+/* Canvas */
+#game-container { position: relative; }
+
+#gameCanvas {
+    display: block;
+    cursor: crosshair;
+    border-bottom: 4px solid #1a331c;
+}
+
+/* Ayuda de controles */
+#controls-help {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    pointer-events: none;
+    line-height: 1.9;
+}
+
+/* Panel inferior */
+#ui-bottom {
+    display: flex;
+    height: 220px;
+    background: #1a1a1a;
+}
+
+/* Consola de log */
+#log-console {
+    flex: 1;
+    background: #000;
+    color: #00ff00;
+    padding: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    overflow-y: auto;
+    border-right: 2px solid #333;
+}
+
+#log-console div { margin-bottom: 4px; }
+
+/* Panel de tecnologías */
+#tech-panel {
+    flex: 2.5;
+    display: flex;
+    flex-direction: column;
+    background: #1a1a1a;
+    overflow: hidden;
+}
+
+.section-title {
+    margin: 8px 15px 4px;
+    color: #aaaaaa;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#tech-tree {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 8px 15px;
+    overflow-y: auto;
+}
+
+/* Ítems del árbol de tecnologías */
+.tech-item {
+    width: 120px;
+    min-height: 60px;
+    border: 2px solid #444;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #2a2a2a;
+    transition: background 0.2s, border-color 0.2s;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 6px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.tech-item:hover:not(.purchased):not(.locked) {
+    background: #444;
+    border-color: #00ff00;
+}
+
+.tech-item.available { border-color: #2196f3; }
+
+.tech-item.purchased {
+    background: #004d40;
+    border-color: #00ff00;
+    color: #00ff00;
+    cursor: default;
+}
+
+.tech-item.locked {
+    border-color: #333;
+    color: #555;
+    cursor: not-allowed;
+    background: #1a1a1a;
+}
+
+.tech-item small {
+    font-size: 10px;
+    font-weight: normal;
+    text-transform: none;
+    margin-top: 3px;
+    opacity: 0.8;
+}
+
+/* Panel de relaciones políticas */
+#relaciones-panel {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    background: #1a1a1a;
+    border-left: 2px solid #333;
+    overflow: hidden;
+}
+
+#relaciones-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px 12px;
+    overflow-y: auto;
+    font-size: 11px;
+}
+
+.relacion-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 6px;
+    background: #2a2a2a;
+    border-radius: 3px;
+    border-left: 3px solid;
+}
+
+.relacion-nombre {
+    font-weight: bold;
+    min-width: 100px;
+    color: #ffffff;
+}
+
+.relacion-estado {
+    padding: 2px 6px;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
+    flex: 1;
+}
+
+.relacion-unidades {
+    font-size: 10px;
+    color: #cccccc;
+    text-align: right;
+    min-width: 40px;
+}
+
+.relacion-guerra {
+    background: #c62828;
+    color: #fff;
+}
+
+.relacion-aliado {
+    background: #2e7d32;
+    color: #fff;
+}
+
+.relacion-neutral {
+    background: #616161;
+    color: #fff;
+}
+
+.relacion-target {
+    background: #352a18;
+}
+
+/* Tooltip */
+#tooltip {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.92);
+    border: 1px solid #555;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    pointer-events: none;
+    display: none;
+    max-width: 230px;
+    z-index: 100;
+    line-height: 1.5;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.lobby {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #18381f;
+}
+
+.lobby-panel {
+    width: min(420px, calc(100vw - 32px));
+    background: rgba(0, 0, 0, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 6px;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.lobby-panel h1 {
+    margin: 0 0 18px;
+    font-size: 32px;
+}
+
+.lobby-panel label {
+    display: block;
+    margin: 12px 0 6px;
+    color: #cccccc;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.lobby-panel input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid #45634a;
+    border-radius: 4px;
+    background: #0f1f13;
+    color: #fff;
+    outline: none;
+}
+
+.lobby-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.lobby-actions button {
+    flex: 1;
+    border: 0;
+    border-radius: 4px;
+    padding: 10px 12px;
+    background: #2e7d32;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.lobby-actions button:hover {
+    background: #3c9b41;
+}
+
+#lobbyMessage {
+    min-height: 20px;
+    margin: 14px 0 0;
+    color: #ffeb3b;
+}
+
+button.tech-item {
+    color: #ffffff;
+    font-family: inherit;
+}
+
+.tech-item:disabled {
+    opacity: 0.78;
+}
+
+.relacion-estado {
+    border: 0;
+    cursor: pointer;
+}
+
+#players-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px 12px;
+    overflow-y: auto;
+}
+
+.player-item {
+    padding: 6px 8px;
+    background: #2a2a2a;
+    border-left: 3px solid #777;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+[hidden] {
+    display: none !important;
+}
